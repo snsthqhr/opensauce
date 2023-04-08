@@ -1,0 +1,29 @@
+import os
+import openai
+openai.api_key = "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"
+ #key값 입력
+'''messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Who won the world series in 2020?"},
+        {"role": "assistant", "content": "The Los Angeles Dodgers won the World Series in 2020."},
+        {"role": "user", "content": "Where was it played?"}
+    ]'''
+#위에 것은 messages의 예시로 밑에 것을 풀어쓴 것
+
+messages = []
+while True:
+  user_content =input("user : ")
+
+  messages.append({"role" : "user","content" : f"{user_content}"})
+#ex.append는 ex에 내용을 추가하는 명령어
+  completion = openai.ChatCompletion.create( model="gpt-3.5-turbo", messages=messages)
+
+
+  assistant_content = completion.choices[0].message["content"].strip()
+  #assistant에 저장
+  messages.append({"role" : "assistant","content" : f"{assistant_content}"})
+
+  print(f"gpt : {assistant_content}")
+  #print(completion.choices[0].message["content"].strip()) -> assistant_content에 저장 안했을 때 사용하는 법
+  #strip()은 빈칸이 안 생기기 위해서
+  #print(response["choices"][0]["messages"]["content"]) -> 위에 print랑 똑같다.
