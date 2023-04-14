@@ -1,11 +1,13 @@
 import openai
 def chat_gpt(diagnosis):
-    OPENAI_API_KEY = "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"
+    OPENAI_API_KEY = "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"
     openai.api_key = OPENAI_API_KEY
     model = "gpt-3.5-turbo"
-    messages = []
     content = diagnosis
-    messages.append({"role":"user", "content":content})
+    messages = [
+        {"role": "system", "content": "You are a helpful assistant who recommends nutritional supplements."},
+        {"role": "user", "content": content}
+    ]
     response = openai.ChatCompletion.create(
         model = model,
         messages = messages
