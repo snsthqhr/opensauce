@@ -1,9 +1,0 @@
-<h1>{{ question.subject }}</h1>
-<div>
-    {{ question.content }}
-</div>
-<form action="{% url 'pynuts:diagnosis_create' question.id %}" method="post">
-{% csrf_token %}
-<textarea name="content" id="content" rows="15"></textarea>
-<input type="submit" value="답변등록">
-</form>
