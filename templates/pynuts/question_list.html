@@ -1,0 +1,15 @@
+{% if question_list %}
+    <ul>
+    {% for question in question_list %}
+        <p>Q{{question.id}} : {{ question.subject }}</p>
+        <form action="/pynuts/diagnosis/create/" method="post">
+        {% csrf_token %}
+        <textarea name="content" id="content" rows="15"></textarea>
+        <input type="submit" value="답변등록">
+        <br><br>
+        </form>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>질문이 없습니다.</p>
+{% endif %}
