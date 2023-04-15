@@ -14,7 +14,7 @@ def index(request):
     """
     question_list = Question.objects.order_by('content')
     context = {'question_list': question_list}
-    return render(request, 'pynuts/question_list.html', context)
+    return render(request, 'pynuts/servey_page.html', context)
 def diagnosis_create(request):
     """
     답변에 대한 gpt 진단(영양제 추천)
