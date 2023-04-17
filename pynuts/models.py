@@ -15,6 +15,7 @@ class Diagnosis(models.Model):
         return self.content
 class GPTResponse(models.Model):
     content = models.TextField()
+    explanation = models.TextField()
 
     def __str__(self):
         return self.content
