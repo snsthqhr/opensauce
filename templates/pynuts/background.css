@@ -13,3 +13,8 @@ b{
 .redtext{
   color : red;
 }
+
+#container {
+  border:1px solid #222;
+  padding : 10px;
+}
