@@ -21,61 +21,67 @@
     <form action="diagnosis_result" method="GET">
         <h1>건강상태에 관해 질문 하겠습니다. 만약 해당하는 사항이 있다면, 체크 해주세요!</h1>
         <hr>
-        <h3> 소화관련 </h3>
-        <p>소화관련 질문 입니다. 해당하는 것이 있다면 체크 해주세요.</p>
-        <hr>
-        <ol>
-            <div>
-                <li>평상시 <b class="redtext">소화</b>가 잘 되지 않는다.<br></li>
-                <input type="radio" name="digestion1" value ="소화가 잘 안된다. "/>예 <input type="radio"  name="digestion1" />아니오
-            </div>
-            <div>
-                <li><b class="redtext">설사나 변비</b>가 잦다.<br></li>
-                <input type="radio" name="digestion2" value ="설사가 잦다. "/>예 <input type="radio"  name="digestion2" />아니오
-            </div>
-            <div>
-                <li><b class="redtext">복부팽만</b>이 심하다.</li>
-                <input type="radio" name="digestion3" value ="복부팽만이 심하다. "/>예 <input type="radio"  name="digestion3" />아니오
-            </div>
-            <div>
-                <li><b class="redtext">치질</b>이 있다.</li>
-                <input type="radio" name="digestion4" value ="치질이 있다. "/>예 <input type="radio"  name="digestion4" />아니오
-            </div>
-        </ol>
-        <hr>
-        <h3> 몸 컨디션 </h3>
-        <p>몸 컨디션 관련 질문 입니다. 해당하는 것이 있다면 체크 해주세요.</p>
-        <hr>
-        <ol>
-            <div>
-                <li>평상시 <b class="redtext">기운</b>이 없다.<br></li>
-                <input type="radio" name="body_condition1" value ="평상시 기운이 없다. "/>예 <input type="radio"  name="body_condition1" />아니오
-            </div>
-            <div>
-                <li><b class="redtext">모발이 얇아지거나</b>머리가 많이 빠진다.<br></li>
-                <input type="radio" name="body_condition2" value ="머리가 많이 빠진다. "/>예 <input type="radio"  name="body_condition2" />아니오
-            </div>
-            <div>
-                <li>쉽게<b class="redtext">피곤</b>해진다.</li>
-                <input type="radio" name="body_condition3" value ="쉽게 피곤해진다. "/>예 <input type="radio"  name="body_condition3" />아니오
-            </div>
-            <div>
-                <li><b class="redtext">빈혈,어지러움</b>을 자주 느낀다.</li>
-                <input type="radio" name="body_condition4" value ="어지러움을 자주 느낀다. "/>예 <input type="radio"  name="body_condition4" />아니오
-            </div>
-            <div>
-                <li><b class="redtext">면역력</b>이 떨어지는거 같다.</li>
-                <input type="radio" name="body_condition5" value ="면역력이 떨어진다. "/>예 <input type="radio"  name="body_condition5" />아니오
-            </div>
-            <div>
-                <li><b class="redtext">수족냉증</b>이 있다.</li>
-                <input type="radio" name="body_condition6" value ="손발이 차갑다. "/>예 <input type="radio"  name="body_condition6" />아니오
-            </div>
-            <div>
-                <li><b class="redtext">피부 트러블</b>이 많이 일어난다.</li>
-                <input type="radio" name="body_condition7" value ="피부 트러블이 일어난다. "/>예 <input type="radio"  name="body_condition7" />아니오
-            </div>
-        </ol>
+        <div id ="container">
+            <h3> 소화관련 </h3>
+            <p>소화관련 질문 입니다. 해당하는 것이 있다면 체크 해주세요.</p>
+            <hr>
+            <ol>
+                <div>
+                    <li>평상시 <b class="redtext">소화</b>가 잘 되지 않는다.<br></li>
+                    <input type="radio" name="digestion1" value ="소화가 잘 안된다. "/>예 <input type="radio"  name="digestion1" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">설사나 변비</b>가 잦다.<br></li>
+                    <input type="radio" name="digestion2" value ="설사가 잦다. "/>예 <input type="radio"  name="digestion2" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">복부팽만</b>이 심하다.</li>
+                    <input type="radio" name="digestion3" value ="복부팽만이 심하다. "/>예 <input type="radio"  name="digestion3" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">치질</b>이 있다.</li>
+                    <input type="radio" name="digestion4" value ="치질이 있다. "/>예 <input type="radio"  name="digestion4" />아니오
+                </div>
+            </ol>
+        </div>
+       <div>
+            <h3> 몸 컨디션 </h3>
+            <p>몸 컨디션 관련 질문 입니다. 해당하는 것이 있다면 체크 해주세요.</p>
+            <hr>
+            <ol>
+                <div>
+                    <li>평상시 <b class="redtext">기운</b>이 없다.<br></li>
+                    <input type="radio" name="body_condition1" value ="평상시 기운이 없다. "/>예 <input type="radio"  name="body_condition1" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">모발이 얇아지거나</b>머리가 많이 빠진다.<br></li>
+                    <input type="radio" name="body_condition2" value ="머리가 많이 빠진다. "/>예 <input type="radio"  name="body_condition2" />아니오
+                </div>
+                <div>
+                    <li>쉽게<b class="redtext">피곤</b>해진다.</li>
+                    <input type="radio" name="body_condition3" value ="쉽게 피곤해진다. "/>예 <input type="radio"  name="body_condition3" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">빈혈,어지러움</b>을 자주 느낀다.</li>
+                    <input type="radio" name="body_condition4" value ="어지러움을 자주 느낀다. "/>예 <input type="radio"  name="body_condition4" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">면역력</b>이 떨어지는거 같다.</li>
+                    <input type="radio" name="body_condition5" value ="면역력이 떨어진다. "/>예 <input type="radio"  name="body_condition5" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">수족냉증</b>이 있다.</li>
+                    <input type="radio" name="body_condition6" value ="손발이 차갑다. "/>예 <input type="radio"  name="body_condition6" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">피부 트러블</b>이 많이 일어난다.</li>
+                    <input type="radio" name="body_condition7" value ="피부 트러블이 일어난다. "/>예 <input type="radio"  name="body_condition7" />아니오
+                </div>
+            </ol>
+
+       </div>
+       
+        
         <hr>
         <h3> 통증관련 </h3>
         <p>통증관련 질문 입니다. 해당하는 것이 있다면 체크 해주세요.</p>
