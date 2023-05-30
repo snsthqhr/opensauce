@@ -2,4 +2,14 @@ h1 {
   font-size:2em;
   font-style:italic;
   color:#00FF00;
+  
+}
+
+
+b{
+  color:red;
+}
+
+.redtext{
+  color : red;
 }
