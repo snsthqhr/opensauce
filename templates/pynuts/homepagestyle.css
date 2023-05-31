@@ -27,6 +27,13 @@
 
     .nav{
         display:flex;
-        
+        justify-content: flex-end;
+        line-height: 86px;
+        width:calc(1280px - 300px);
+        background: blue;
+
     }
 
+    .nav>li{
+        margin-left:84px;
+    }
