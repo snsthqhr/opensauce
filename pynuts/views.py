@@ -29,6 +29,7 @@ def diagnosis_create(request):
     diagnosis = ""
     gptquestion1 = ""
     gptquestion2 = ""
+    eating_habits = 1
 
     answer = request.GET.get('digestion1')
     if (answer != "on"):
@@ -98,14 +99,23 @@ def diagnosis_create(request):
     if (answer != "on"):
         diagnosis += answer
 
+    answer = request.GET.get('e_habit1')
+    if (answer != "on"):
+        eating_habits = 2
+
+
+
+    gptquestion2 = diagnosis + "나에게 가장 필요한 영양소 5개를 진단해줘. 이유도 알려줘. 영양소만 다섯 개 이내로."
+    gptq2 = Question(content=gptquestion2)
+    gptanswer = GPTResponse(content=' ', explanation=chatgpt.chat_gpt(gptq2.content))
+    gptanswer.save()
+
+
+    """
     gptquestion1 = diagnosis + "한국 쿠팡에서 구매가능한 영양제 제품 이름 다섯개 이내로 알려줘. 설명 없이 제품만 추천해줘."
     gptq1 = Diagnosis(content=gptquestion1)
     gptq1.save()
-
-    gptquestion2 = diagnosis + "나에게 가장 필요한 영양소 5개를 진단해줘. 이유도 알려줘. 영양소만 다섯 개 이내로. 100단어 이내로 대답해줘. "
-    gptq2 = Question(content=gptquestion2)
-    gptanswer = GPTResponse(content=chatgpt.chat_gpt(gptq1.content), explanation=chatgpt.chat_gpt(gptq2.content))
-    gptanswer.save()
+    """
 
     context = {'gptanswer': gptanswer}
     return render(request, 'pynuts/diagnosis_result.html', context)
