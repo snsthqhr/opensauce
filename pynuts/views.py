@@ -105,8 +105,9 @@ def diagnosis_create(request):
     answer = request.GET.get('e_habit2')
     if (answer != "on"):
         eating_habits = 3
-
-
+    answer = request.GET.get('e_habit3')
+    if (answer != "on"):
+        eating_habits = 4
 
     gptquestion2 = diagnosis + "나에게 가장 필요한 영양소 5개를 진단해줘. 이유도 알려줘. 영양소만 다섯 개 이내로."
     gptq2 = Question(content=gptquestion2)
