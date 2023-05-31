@@ -102,6 +102,9 @@ def diagnosis_create(request):
     answer = request.GET.get('e_habit1')
     if (answer != "on"):
         eating_habits = 2
+    answer = request.GET.get('e_habit2')
+    if (answer != "on"):
+        eating_habits = 3
 
 
 
