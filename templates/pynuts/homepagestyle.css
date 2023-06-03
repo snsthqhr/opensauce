@@ -4,15 +4,13 @@
 text-decoration: none;
 border-collapse: collapse;
 margin:0px;
-color:#000     /* black */
+color:black;     /* black */
+
+}
+header{
+    color:black;
 }
 
-.intro_bg{
-   
-    width:100%;
-    height:86px;
-}
-   
    
    
    body{
@@ -36,8 +34,34 @@ color:#000     /* black */
         background-attachment: fixed;
         background-size: 100% 100%;
         margin:auto auto auto auto;/*상우하좌*/
+       
   } 
-   
+.amount{
+    position:realtive;
+    top:-66px;
+display:flex;
+    width:1280px;
+background:white;
+margin: auto;
+}
+.amount>li{
+    flex:1;
+    height:132px;
+}
+.amount>li>div{
+    text-align:center;
+}
+
+
+  .hye > h1
+   {
+    color:white;
+} 
+  .hye > p
+   {
+    color:white;
+}
+
   .i{
     display:flex;  
 } 
@@ -45,6 +69,7 @@ color:#000     /* black */
   .h1{ 
        
         font-size: 2em;
+        color:white;
         font-weight:800;
         font-family: 잘난체;
     }
