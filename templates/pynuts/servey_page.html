@@ -13,128 +13,173 @@
             background-attachment: fixed;
             background-size: 100% 100%;
         }
+
     </style>
+    <link href="background.css" rel="stylesheet">
 </head>
 <body>
     <form action="diagnosis_result" method="GET">
         <h1>건강상태에 관해 질문 하겠습니다. 만약 해당하는 사항이 있다면, 체크 해주세요!</h1>
         <hr>
-        <h3> 소화관련 </h3>
-        <p>소화관련 질문 입니다. 해당하는 것이 있다면 체크 해주세요.</p>
+        <div id ="container">
+            <h3> 소화관련 </h3>
+            <p>소화관련 질문 입니다. 해당하는 것이 있다면 체크 해주세요.</p>
+            <hr>
+            <ol>
+                <div>
+                    <li>평상시 <b class="redtext">소화</b>가 잘 되지 않는다.<br></li>
+                    <input type="radio" name="digestion1" value ="소화가 잘 안된다. "/>예 <input type="radio"  name="digestion1" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">설사나 변비</b>가 잦다.<br></li>
+                    <input type="radio" name="digestion2" value ="설사가 잦다. "/>예 <input type="radio"  name="digestion2" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">복부팽만</b>이 심하다.</li>
+                    <input type="radio" name="digestion3" value ="복부팽만이 심하다. "/>예 <input type="radio"  name="digestion3" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">치질</b>이 있다.</li>
+                    <input type="radio" name="digestion4" value ="치질이 있다. "/>예 <input type="radio"  name="digestion4" />아니오
+                </div>
+            </ol>
+        </div>
+
+
+
+       <div id ="container">
+            <h3> 몸 컨디션 </h3>
+            <p>몸 컨디션 관련 질문 입니다. 해당하는 것이 있다면 체크 해주세요.</p>
+            <hr>
+            <ol>
+                <div>
+                    <li>평상시 <b class="redtext">기운</b>이 없다.<br></li>
+                    <input type="radio" name="body_condition1" value ="평상시 기운이 없다. "/>예 <input type="radio"  name="body_condition1" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">모발이 얇아지거나</b>머리가 많이 빠진다.<br></li>
+                    <input type="radio" name="body_condition2" value ="머리가 많이 빠진다. "/>예 <input type="radio"  name="body_condition2" />아니오
+                </div>
+                <div>
+                    <li>쉽게<b class="redtext">피곤</b>해진다.</li>
+                    <input type="radio" name="body_condition3" value ="쉽게 피곤해진다. "/>예 <input type="radio"  name="body_condition3" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">빈혈,어지러움</b>을 자주 느낀다.</li>
+                    <input type="radio" name="body_condition4" value ="어지러움을 자주 느낀다. "/>예 <input type="radio"  name="body_condition4" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">면역력</b>이 떨어지는거 같다.</li>
+                    <input type="radio" name="body_condition5" value ="면역력이 떨어진다. "/>예 <input type="radio"  name="body_condition5" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">수족냉증</b>이 있다.</li>
+                    <input type="radio" name="body_condition6" value ="손발이 차갑다. "/>예 <input type="radio"  name="body_condition6" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">피부 트러블</b>이 많이 일어난다.</li>
+                    <input type="radio" name="body_condition7" value ="피부 트러블이 일어난다. "/>예 <input type="radio"  name="body_condition7" />아니오
+                </div>
+            </ol>
+
+       </div>
+       
+
+
+
+        <div id ="container">
+            <hr>
+            <h3> 통증관련 </h3>
+            <p>통증관련 질문 입니다. 해당하는 것이 있다면 체크 해주세요.</p>
+            <hr>
+            <ol>
+                <div>
+                    <li><b class="redtext">어깨</b>가 자주 뭉친다.<br></li>
+                    <input type="radio" name="ache1" value ="어깨가 자주 뭉친다. "/>예 <input type="radio"  name="ache1" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">근육통,쥐</b>가 자주 난다.<br></li>
+                    <input type="radio" name="ache2" value ="근육통이 있다. "/>예 <input type="radio"  name="ache2" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">타박상</b>을 입었을때 피부가 쉽게 멍이 든다 .<br></li>
+                    <input type="radio" name="ache3" value ="쉽게 멍이 든다. "/>예 <input type="radio"  name="ache3" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">편두통</b>이 자주 있다.<br></li>
+                    <input type="radio" name="ache4" value ="편두통이 있다. "/>예 <input type="radio"  name="ache4" />아니오
+                </div>
+            </ol>
+        </div>
+       
+      
+        <div id ="container">
+                <h3> 뼈 관련질문 </h3>
+            <p>뼈관련 질문 입니다. 해당하는 것이 있다면 체크 해주세요.</p>
+            <hr>
+            <ol >
+                <div>
+                    <li><b class="redtext">뼈</b>에서 자주 소리가 난다.<br></li>
+                    <input type="radio" name="born1" value ="뼈에서 소리가 난다. "/>예 <input type="radio"  name="born1" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">뼈</b>가 자주 부러지거나 금이 간다.<br></li>
+                    <input type="radio" name="born2" value ="뼈가 잘 부러진다. "/>예 <input type="radio"  name="born2" />아니오
+                </div>
+                <div>
+                    <li>뛰거나 걸을 때 <b class="redtext">뼈</b>에 통증이 있다 .<br></li>
+                    <input type="radio" name="born3" value ="뼈에 통증이 있다. "/>예 <input type="radio"  name="born3" />아니오
+                </div>
+                
+            </ol> 
+        </div>
+          
+        <div id ="container">
+
+                <h3> 구강,입 관련질문 </h3>
+            <p>구강,입관련 질문 입니다. 해당하는 것이 있다면 체크 해주세요.</p>
+            <hr>
+            <ol>
+                <div>
+                    <li><b class="redtext">입술</b>이 자주 갈라진다.<br></li>
+                    <input type="radio" name="mouth1" value ="입술이 갈라진다. "/>예 <input type="radio"  name="mouth1" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">입술</b>에 혈색이 없다.<br></li>
+                    <input type="radio" name="mouth2" value ="입술 혈색이 안좋다. "/>예 <input type="radio"  name="mouth2" />아니오
+                </div>
+                <div>
+                    <li><b class="redtext">구내염</b>이 한번 나면 오랫동안 없어지지 않는다 .<br></li>
+                    <input type="radio" name="mouth3" value ="구내염이 잘 안없어진다. "/>예 <input type="radio"  name="mouth3" />아니오
+                </div>
+                
+            </ol>
+        </div>
+
+        <div id ="container">
+
+            <h3> 식습관 관련 질문 </h3>
+        <p>식습관 관련 질문 입니다. 해당하는 것이 있다면 체크 해주세요.</p>
         <hr>
         <ol>
             <div>
-                <li>평상시 <b>소화</b>가 잘 되지 않는다.<br></li>
-                <input type="radio" name="digestion1" value ="소화가 잘 안된다. "/>예 <input type="radio"  name="digestion1" />아니오
+                <li>일주일에<b class="redtext">과일</b>을 3일 이상 섭취 하십니까?<br></li>
+                <input type="radio" name="eathabit1" value ="과일을 섭취 한다 "/>예 <input type="radio"  name="eathabit1" />아니오
             </div>
             <div>
-                <li><b>설사나 변비</b>가 잦다.<br></li>
-                <input type="radio" name="digestion2" value ="설사가 잦다. "/>예 <input type="radio"  name="digestion2" />아니오
+                <li><b class="redtext">규칙적인 식사</b>를 하십니까?<br></li>
+                <input type="radio" name="eathabit2" value ="규칙적인 식사를 한다. "/>예 <input type="radio"  name="eathabit2" />아니오
             </div>
             <div>
-                <li><b>복부팽만</b>이 심하다.</li>
-                <input type="radio" name="digestion3" value ="복부팽만이 심하다. "/>예 <input type="radio"  name="digestion3" />아니오
+                <li><b class="redtext">다양한 음식</b>을 많이 섭취하십니까? <br></li>
+                <input type="radio" name="eathabit3" value ="편식을 하지 않는다 "/>예 <input type="radio"  name="eathabit3" />아니오
             </div>
-            <div>
-                <li><b>치질</b>이 있다.</li>
-                <input type="radio" name="digestion4" value ="치질이 있다. "/>예 <input type="radio"  name="digestion4" />아니오
-            </div>
+            
         </ol>
-        <hr>
-        <h3> 몸 컨디션 </h3>
-        <p>몸 컨디션 관련 질문 입니다. 해당하는 것이 있다면 체크 해주세요.</p>
-        <hr>
-        <ol>
-            <div>
-                <li>평상시 <b>기운</b>이 없다.<br></li>
-                <input type="radio" name="body_condition1" value ="평상시 기운이 없다. "/>예 <input type="radio"  name="body_condition1" />아니오
-            </div>
-            <div>
-                <li><b>모발이 얇아지거나</b>머리가 많이 빠진다.<br></li>
-                <input type="radio" name="body_condition2" value ="머리가 많이 빠진다. "/>예 <input type="radio"  name="body_condition2" />아니오
-            </div>
-            <div>
-                <li>쉽게<b>피곤</b>해진다.</li>
-                <input type="radio" name="body_condition3" value ="쉽게 피곤해진다. "/>예 <input type="radio"  name="body_condition3" />아니오
-            </div>
-            <div>
-                <li><b>빈혈,어지러움</b>을 자주 느낀다.</li>
-                <input type="radio" name="body_condition4" value ="어지러움을 자주 느낀다. "/>예 <input type="radio"  name="body_condition4" />아니오
-            </div>
-            <div>
-                <li><b>면역력</b>이 떨어지는거 같다.</li>
-                <input type="radio" name="body_condition5" value ="면역력이 떨어진다. "/>예 <input type="radio"  name="body_condition5" />아니오
-            </div>
-            <div>
-                <li><b>수족냉증</b>이 있다.</li>
-                <input type="radio" name="body_condition6" value ="손발이 차갑다. "/>예 <input type="radio"  name="body_condition6" />아니오
-            </div>
-            <div>
-                <li><b>피부 트러블</b>이 많이 일어난다.</li>
-                <input type="radio" name="body_condition7" value ="피부 트러블이 일어난다. "/>예 <input type="radio"  name="body_condition7" />아니오
-            </div>
-        </ol>
-        <hr>
-        <h3> 통증관련 </h3>
-        <p>통증관련 질문 입니다. 해당하는 것이 있다면 체크 해주세요.</p>
-        <hr>
-        <ol>
-            <div>
-                <li><b>어깨</b>가 자주 뭉친다.<br></li>
-                <input type="radio" name="ache1" value ="어깨가 자주 뭉친다. "/>예 <input type="radio"  name="ache1" />아니오
-            </div>
-            <div>
-                <li><b>근육통,쥐</b>가 자주 난다.<br></li>
-                <input type="radio" name="ache2" value ="근육통이 있다. "/>예 <input type="radio"  name="ache2" />아니오
-            </div>
-            <div>
-                <li><b>타박상</b>을 입었을때 피부가 쉽게 멍이 든다 .<br></li>
-                <input type="radio" name="ache3" value ="쉽게 멍이 든다. "/>예 <input type="radio"  name="ache3" />아니오
-            </div>
-            <div>
-                <li><b>편두통</b>이 자주 있다.<br></li>
-                <input type="radio" name="ache4" value ="편두통이 있다. "/>예 <input type="radio"  name="ache4" />아니오
-            </div>
-        </ol>
-        <hr>
+    </div>
+
         
-        <h3> 뼈 관련질문 </h3>
-        <p>뼈관련 질문 입니다. 해당하는 것이 있다면 체크 해주세요.</p>
-        <hr>
-        <ol>
-            <div>
-                <li><b>뼈</b>에서 자주 소리가 난다.<br></li>
-                <input type="radio" name="born1" value ="뼈에서 소리가 난다. "/>예 <input type="radio"  name="born1" />아니오
-            </div>
-            <div>
-                <li><b>뼈</b>가 자주 부러지거나 금이 간다.<br></li>
-                <input type="radio" name="born2" value ="뼈가 잘 부러진다. "/>예 <input type="radio"  name="born2" />아니오
-            </div>
-            <div>
-                <li>뛰거나 걸을 때<b>뼈</b>에 통증이 있다 .<br></li>
-                <input type="radio" name="born3" value ="뼈에 통증이 있다. "/>예 <input type="radio"  name="born3" />아니오
-            </div>
-            
-        </ol>   
-        <h3> 구강,입 관련질문 </h3>
-        <p>구강,입관련 질문 입니다. 해당하는 것이 있다면 체크 해주세요.</p>
-        <hr>
-        <ol>
-            <div>
-                <li><b>입술</b>이 자주 갈라진다.<br></li>
-                <input type="radio" name="mouth1" value ="입술이 갈라진다. "/>예 <input type="radio"  name="mouth1" />아니오
-            </div>
-            <div>
-                <li><b>입술</b>에 혈색이 없다.<br></li>
-                <input type="radio" name="mouth2" value ="입술 혈색이 안좋다. "/>예 <input type="radio"  name="mouth2" />아니오
-            </div>
-            <div>
-                <li><b>구내염</b>이 한번 나면 오랫동안 없어지지 않는다 .<br></li>
-                <input type="radio" name="mouth3" value ="구내염이 잘 안없어진다. "/>예 <input type="radio"  name="mouth3" />아니오
-            </div>
-            
-        </ol>
-        <input type="submit"> 빼먹은 항목이 없는지 다시 한번 확인해주세요!
+        <input type="submit"> 빼먹은 항목이 없는지 다시 한번 확인해주세요! 
     </form>
     
 </body>
