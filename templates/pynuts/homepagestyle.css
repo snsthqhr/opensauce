@@ -108,27 +108,37 @@ margin: auto;
     }
 
     .icons{
-        display:flex;
-        width:1280px;
-        height:302px;
+       display:flex;
+        width:600px;
+        height:200px;
         margin: auto;
 
 }
   
 .icons>li{
-flex:1;   
+ flex:1;
  background:white;
     text-align:center;
     margin-top:49px;
-    height: 200px;
+    height: 200x;
+  text-align:center;  
   }
-.icons>li:not(:last-chile){
-    margin-right:20px;
-}
+
+
 
 
 
   .contents1_bold{
     font-size:18px;
     font-weight:bold;
+  }
+
+  .more{
+
+  }
+  
+  .last{
+  
+
+    background-color:black;
   }
