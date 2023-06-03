@@ -54,15 +54,9 @@ margin: auto;
     margin-top:37px;
     height:57px;
    
-.box{
-background:orange
 
 }
-   
-}
-.amount>li>div>strong{
-    color:white;
-}
+
 
   .hye > h1
    {
@@ -109,4 +103,20 @@ background:orange
       
     }
 
-  
+    .main_text{
+     background-color:#f1f2f3;
+    }
+
+    .icons{
+        margin: auto;
+width:500px;
+background:white;
+}
+  .icons>li{
+   
+ background:white;
+    text-align:center;
+    margin-top:49px;
+ flex: 1;
+    height: 200px;
+  }
