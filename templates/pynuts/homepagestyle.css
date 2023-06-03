@@ -37,24 +37,32 @@ header{
        
   } 
 .amount{
-    position:realtive;
+   
     top:-66px;
 display:flex;
-    width:1380px;
+    width:1280px;
 background:white;
 margin: auto;
 }
 .amount>li{
     flex:1;
     height:132px;
+    
 }
-.amount>li>div{
+.amount>li>div {
     text-align:center;
-    border:1px solid black;
-    margin-top:50px;
-    height:100px;
-}
+    margin-top:37px;
+    height:57px;
+   
+.box{
+background:orange
 
+}
+   
+}
+.amount>li>div>strong{
+    color:white;
+}
 
   .hye > h1
    {
