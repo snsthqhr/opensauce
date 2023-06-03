@@ -2,13 +2,16 @@
 *{
   list-style:none;                /*버튼에서 줄같은 거 없애기*/
 text-decoration: none;
+
 border-collapse: collapse;
 margin:0px;
-color:black;     /* black */
+padding:0px;
+color:black;
+/* black */
 
 }
 header{
-    color:black;
+   
 }
 
    
@@ -16,14 +19,14 @@ header{
    body{
         text-align: center;
         
-         
-       background-repeat: no-repeat;
-       background-position: center center;
+        background-repeat: no-repeat;
+        background-position: center center;
         background-attachment: fixed;
-        background-size: 100% 100%;
+         background-size: 100% 100%;
+      
         font-size: 30px;
        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      color:white;
+      
     }
   
   .hye{
@@ -67,9 +70,7 @@ margin: auto;
     color:white;
 }
 
-  .i{
-    display:flex;  
-} 
+  
 
   .h1{ 
        
@@ -124,11 +125,11 @@ margin: auto;
    
   }
 .box{
-    width:600px;
-    height:100px;
+    width:500px;
+    height:80px;
     margin:auto;
-    background:white;
-    color:white
+    background-color:white;
+   color:white;
 }
 
   .more{
@@ -141,7 +142,7 @@ color:white;
   
 
   .last{
-  
-
-    background-color:black;
+  padding:30px;
+    background:black;
+    color:white;
   }
