@@ -18,3 +18,14 @@ b{
   border:2px solid #222;
   padding : 10px;
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width:100px; 
+  height:100px;
+   background-color:#CF0;
+  /* 화면의 세로 길이를 기준으로 정렬 */
+}
