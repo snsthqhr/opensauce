@@ -108,15 +108,27 @@ margin: auto;
     }
 
     .icons{
+        display:flex;
+        width:1280px;
+        height:302px;
         margin: auto;
-width:500px;
-background:white;
+
 }
-  .icons>li{
-   
+  
+.icons>li{
+flex:1;   
  background:white;
     text-align:center;
     margin-top:49px;
- flex: 1;
     height: 200px;
+  }
+.icons>li:not(:last-chile){
+    margin-right:20px;
+}
+
+
+
+  .contents1_bold{
+    font-size:18px;
+    font-weight:bold;
   }
