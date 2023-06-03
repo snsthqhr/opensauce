@@ -121,22 +121,25 @@ margin: auto;
     text-align:center;
     margin-top:49px;
     height: 200x;
-  text-align:center;  
+   
   }
-
-
-
-
-
-  .contents1_bold{
-    font-size:18px;
-    font-weight:bold;
-  }
+.box{
+    width:600px;
+    height:100px;
+    margin:auto;
+    background:white;
+    color:white
+}
 
   .more{
-
+width:150px;
+height:50px;
+background:blue;
+margin:auto;
+color:white;
   }
   
+
   .last{
   
 
