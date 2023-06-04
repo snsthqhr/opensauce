@@ -159,5 +159,8 @@ color:white;
   }
   .new{
   text-align:left;
+    width:1000px;
+    margin:auto;
+    font-size: 15pt;
     
   }
