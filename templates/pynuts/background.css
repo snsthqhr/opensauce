@@ -33,4 +33,11 @@ b{
    width :100px;
    height :50px;
    background-color: violet;
+   color:white;
+   border-top: none;
+   border-left: none;
+   border-right: none;
+   border-bottom : none;
+   border-radius: 5px;
+
 }
