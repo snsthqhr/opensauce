@@ -157,6 +157,9 @@ color:white;
     height:-80px;
     margin:auto;
   }
+  .images2{
+
+  }
   .new{
   text-align:left;
     width:1000px;
@@ -164,3 +167,19 @@ color:white;
     font-size: 15pt;
     
   }
+  .new1{
+    text-align:left;
+      width:600px;
+      margin:auto;
+      font-size: 15pt;
+      
+    }
+    .new1>strong{
+      font-size:20pt;
+    }
+    .h2{
+      font-size: 1em;
+      color:white;
+      font-weight:800;
+      font-family: 잘난체;
+    }
