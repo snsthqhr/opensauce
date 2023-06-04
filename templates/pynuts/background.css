@@ -41,3 +41,7 @@ b{
    border-radius: 5px;
 
 }
+.input:hover{
+  color:white;
+  background-color: #CF0;
+}
