@@ -8,6 +8,21 @@ def home(request):
     content = "영양제 추천 서비스"
     context = {'content': content}
     return render(request, 'pynuts/homepage.html', context)
+def page_introduction(request):
+    """
+    홈페이지-소개 출력
+    """
+    return render(request, 'pynuts/homepage_introduciton.html')
+def page_necessity(request):
+    """
+    홈페이지-필요성 출력
+    """
+    return render(request, 'pynuts/homepage_necessity.html')
+def page_problem(request):
+    """
+    홈페이지-문제 출력
+    """
+    return render(request, 'pynuts/homepage_problem.html')
 def index(request):
     """
     설문지 출력
