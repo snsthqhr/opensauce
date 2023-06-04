@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
+{% load static %}
 <head>
       <title>나의 웹사이트</title> 
-      <link rel="stylesheet" type="text/css" href="homepagestyle.css">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/homepagestyle.css' %}">
 </head>
 
 <body>
@@ -10,7 +11,7 @@
   
  
         <div class="header">
-          <li>  <a href='/pynuts/homepage/' style="font-size: 30px;">여장신</a></li>
+          <li>  <a href='/pynuts' style="font-size: 30px;">여장신</a></li>
           <ul class="nav">               
                 <li> <a href='/pynuts/homepage_introduction/' style="font-size: 30px;">소개</a></li>
                 <li> <a href='/pynuts/homepage_necessity/' style="font-size: 30px;">영양제의 필요성</a></li>
@@ -41,7 +42,7 @@
       <br/>
 <div class="box">
                
-         <li> <a href='/pynuts/survey_page/' style="font-size: 50px;">검사 받으러 가기</a></li>
+         <li> <a href='/pynuts/servey_page/' style="font-size: 50px;">검사 받으러 가기</a></li>
        
 </div>   
     <br/>
@@ -86,7 +87,7 @@
     추천받은 영양제를 구매할 땐?
   </li>
   <div class="icon_img">
-    <img src="image/그림 2.svg">
+    <img src="../static/image/그림2.svg" alt="">
     
   </div>
    <ul class="icons">
