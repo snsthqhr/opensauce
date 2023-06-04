@@ -123,30 +123,69 @@ def diagnosis_create(request):
 
     context = {'gptanswer': gptanswer}
 
-    if (gptanswer.explanation.find('바이오틱') > -1):
+    res = {'1': "on", '2': "on", '3': "on", '4': "on", '5': "on", '6': "on"}
+
+    if (gptanswer.explanation.find('바이오틱') > -1 and res['1'] == "on"):
         context['image1'] = "https://img.danawa.com/prod_img/500000/359/849/img/5849359_1.jpg?_v=20200714153550"
         context['name1'] = "서울약사신협 프로바이오 생유산균"
         context['descrip1'] = "1일 1회 1포, 아침 공복"
-    elif (gptanswer.explanation.find('비타') > -1):
+        res['1'] = "off"
+    elif (gptanswer.explanation.find('비타') > -1 and res['2'] == "on"):
         context['image1'] = "https://contents.lotteon.com/itemimage/_v165116/LO/19/77/79/36/03/_1/97/77/93/60/4/LO1977793603_1977793604_1.jpg/dims/optimize/dims/resizemc/400x400"
         context['name1'] = "쏜리서치_종합비타민_투퍼데이"
         context['descrip1'] = "1일 1회 2정, 식후"
-    elif (gptanswer.explanation.find('마그네슘') > -1):
+        res['2'] = "off"
+    elif (gptanswer.explanation.find('마그네슘') > -1 and res['3'] == "on"):
         context['image1'] = "https://img.danawa.com/prod_img/500000/583/126/img/3126583_1.jpg?_v=20221207111917"
         context['name1'] = "GNC_마그네슘"
         context['descrip1'] = "1일 1회 1정, 자기 전"
-    elif (gptanswer.explanation.find('철분') > -1):
+        res['3'] = "off"
+    elif (gptanswer.explanation.find('철분') > -1 and res['4'] == "on"):
         context['image1'] = "https://img.danawa.com/prod_img/500000/168/303/img/6303168_1.jpg?_v=20200618112935"
         context['name1'] = "네추럴라이즈 액티브 철분"
         context['descrip1'] = "1일 1회 1정, 공복"
-    elif (gptanswer.explanation.find('오메가') > -1):
+        res['4'] = "off"
+    elif (gptanswer.explanation.find('오메가') > -1 and res['5'] == "on"):
         context['image1'] = "https://openimage.interpark.com/goods_image_big/0/7/5/9/11143170759_l.jpg"
         context['name1'] = "트리플스트렝스_오메가3_피쉬오일"
         context['descrip1'] = "1일 1회 1정, 저녁식사 직후"
-    elif (gptanswer.explanation.find('칼슘') > -1):
+        res['5'] = "off"
+    elif (gptanswer.explanation.find('칼슘') > -1 and res['6'] == "on"):
         context['image1'] = "https://openimage.interpark.com/goods_image_big/5/0/3/7/9439185037_l.jpg"
         context['name1'] = "솔가 칼슘600"
         context['descrip1'] = "1일 1회 1정, 저녁식사 직후"
+        res['6'] = "off"
+
+    if (gptanswer.explanation.find('바이오틱') > -1 and res['1'] == "on"):
+        context['image2'] = "https://img.danawa.com/prod_img/500000/359/849/img/5849359_1.jpg?_v=20200714153550"
+        context['name2'] = "서울약사신협 프로바이오 생유산균"
+        context['descrip2'] = "1일 1회 1포, 아침 공복"
+        res['1'] = "off"
+    elif (gptanswer.explanation.find('비타') > -1 and res['2'] == "on"):
+        context['image2'] = "https://contents.lotteon.com/itemimage/_v165116/LO/19/77/79/36/03/_1/97/77/93/60/4/LO1977793603_1977793604_1.jpg/dims/optimize/dims/resizemc/400x400"
+        context['name2'] = "쏜리서치_종합비타민_투퍼데이"
+        context['descrip2'] = "1일 1회 2정, 식후"
+        res['2'] = "off"
+    elif (gptanswer.explanation.find('마그네슘') > -1 and res['3'] == "on"):
+        context['image2'] = "https://img.danawa.com/prod_img/500000/583/126/img/3126583_1.jpg?_v=20221207111917"
+        context['name2'] = "GNC_마그네슘"
+        context['descrip2'] = "1일 1회 1정, 자기 전"
+        res['3'] = "off"
+    elif (gptanswer.explanation.find('철분') > -1 and res['4'] == "on"):
+        context['image2'] = "https://img.danawa.com/prod_img/500000/168/303/img/6303168_1.jpg?_v=20200618112935"
+        context['name2'] = "네추럴라이즈 액티브 철분"
+        context['descrip2'] = "1일 1회 1정, 공복"
+        res['4'] = "off"
+    elif (gptanswer.explanation.find('오메가') > -1 and res['5'] == "on"):
+        context['image2'] = "https://openimage.interpark.com/goods_image_big/0/7/5/9/11143170759_l.jpg"
+        context['name2'] = "트리플스트렝스_오메가3_피쉬오일"
+        context['descrip2'] = "1일 1회 1정, 저녁식사 직후"
+        res['5'] = "off"
+    elif (gptanswer.explanation.find('칼슘') > -1 and res['6'] == "on"):
+        context['image2'] = "https://openimage.interpark.com/goods_image_big/5/0/3/7/9439185037_l.jpg"
+        context['name2'] = "솔가 칼슘600"
+        context['descrip2'] = "1일 1회 1정, 저녁식사 직후"
+        res['6'] = "off"
 
 
     return render(request, 'pynuts/diagnosis_result.html', context)
