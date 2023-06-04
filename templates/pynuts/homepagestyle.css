@@ -1,0 +1,148 @@
+                        
+*{
+  list-style:none;                /*버튼에서 줄같은 거 없애기*/
+text-decoration: none;
+
+border-collapse: collapse;
+margin:0px;
+padding:0px;
+color:black;
+/* black */
+
+}
+header{
+   
+}
+
+   
+   
+   body{
+        text-align: center;
+        
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+         background-size: 100% 100%;
+      
+        font-size: 30px;
+       font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      
+    }
+  
+  .hye{
+    background-image:url("image/바탕사진입니다.jpg");
+   
+    background-repeat: no-repeat;
+       background-position: center center;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        margin:auto auto auto auto;/*상우하좌*/
+       
+  } 
+.amount{
+   
+    top:-66px;
+display:flex;
+    width:1280px;
+background:white;
+margin: auto;
+}
+.amount>li{
+    flex:1;
+    height:132px;
+    
+}
+.amount>li>div {
+    text-align:center;
+    margin-top:37px;
+    height:57px;
+   
+
+}
+
+
+  .hye > h1
+   {
+    color:white;
+} 
+  .hye > p
+   {
+    color:white;
+}
+
+  
+
+  .h1{ 
+       
+        font-size: 2em;
+        color:white;
+        font-weight:800;
+        font-family: 잘난체;
+    }
+    .header{
+        display:flex;  /*가로로 배치*/    
+        width:1280px;
+        margin:auto;
+        line-height:86px;
+        height:86px;
+        font-weight:800;
+        
+    }
+
+    .nav{
+        display:flex;
+        justify-content: flex-end;
+        line-height: 86px;
+        width:calc(1280px - 300px);
+        background-color: white;
+       
+
+    }
+
+    .nav>li{
+        margin-left:84px;
+      
+    }
+
+    .main_text{
+     background-color:#f1f2f3;
+    }
+
+    .icons{
+       display:flex;
+        width:600px;
+        height:200px;
+        margin: auto;
+
+}
+  
+.icons>li{
+ flex:1;
+ background:white;
+    text-align:center;
+    margin-top:49px;
+    height: 200x;
+   
+  }
+.box{
+    width:500px;
+    height:80px;
+    margin:auto;
+    background-color:white;
+   color:white;
+}
+
+  .more{
+width:150px;
+height:50px;
+background:skyblue;
+margin:auto;
+color:white;
+  }
+  
+
+  .last{
+  padding:30px;
+    background:black;
+    color:white;
+  }
