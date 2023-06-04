@@ -1,7 +1,7 @@
 import openai
 from .models import GPTResponse
 def chat_gpt(diagnosis):
-    OPENAI_API_KEY = "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"
+    OPENAI_API_KEY = "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"
     openai.api_key = OPENAI_API_KEY
     model = "gpt-3.5-turbo"
 
