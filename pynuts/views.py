@@ -97,7 +97,7 @@ def diagnosis_create(request):
         diagnosis += answer
     answer = request.GET.get('mouth3')
     if (answer != "on"):
-        diagnosis += answer
+        diagnosis +=g answer
 
     answer = request.GET.get('e_habit1')
     if (answer != "on"):
