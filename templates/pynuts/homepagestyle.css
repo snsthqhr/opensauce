@@ -152,7 +152,11 @@ color:white;
     height:200px;
     margin:auto;
   }
-
+  .images1{
+    width:600px;
+    height:-80px;
+    margin:auto;
+  }
   .new{
   text-align:left;
     
