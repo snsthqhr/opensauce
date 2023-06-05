@@ -47,7 +47,7 @@ b{
   background-color: #CF0;
 }
 
-.hye{
+.return_home_page_button{
   text-align: center;
   background-color: black;
   color:white;
@@ -57,4 +57,5 @@ b{
   border-bottom : none;
    text-align:center;
   border-radius: 5px;
+  font-size: 2px;
 }
