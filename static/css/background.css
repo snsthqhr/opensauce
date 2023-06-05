@@ -49,4 +49,12 @@ b{
 
 .hye{
   text-align: center;
+  background-color: black;
+  color:white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom : none;
+   text-align:center;
+  border-radius: 5px;
 }
