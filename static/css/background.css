@@ -59,3 +59,9 @@ b{
   border-radius: 5px;
   font-size: 2px;
 }
+
+
+.imgcontainer{
+  height: 100vh;
+  weight: 100vw;
+}
