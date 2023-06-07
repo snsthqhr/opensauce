@@ -128,7 +128,7 @@ def diagnosis_create(request):
     if (answer != "on"):
         eating_habits[3] = "on"
 
-    gptquestion = diagnosis + "나에게 가장 필요한 영양소 3개를 진단해줘. 설명없이 영양소만 말해줘. 만약 필요한 영양소 중에 비타민이 있으면 비타민은 ㅁㅇㅈㅋㅁ한 종류만 말해줘."
+    gptquestion = diagnosis + "나에게 가장 필요한 영양소 3개를 진단해줘. 설명없이 영양소만 말해줘. 만약 필요한 영양소 중에 비타민이 있으면 비타민은 한 종류만 말해줘."
     gptq = Question(content=gptquestion)
 
     gptanswer = GPTResponse(content='', explanation=chatgpt.chat_gpt(gptq.content))
