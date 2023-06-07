@@ -205,10 +205,11 @@ def diagnosis_create(request):
             context['name2'] = "나우푸드 데일리 비츠 멀티 비타민"
             context['descrip2'] = "1일 1회 1정, 아침 공복"
     elif (gptanswer.explanation.find('마그네슘') > -1 and res['3'] == "on"):
-        context['image2'] = "https://img.danawa.com/prod_img/500000/583/126/img/3126583_1.jpg?_v=20221207111917"
-        context['name2'] = "GNC_마그네슘"
-        context['descrip2'] = "1일 1회 1정, 자기 전"
-        res['3'] = "off"
+        red['3'] = "off"
+        if (eating_habits[3] == "on"):
+            context['image2'] = "https://sitem.ssgcdn.com/91/49/79/item/1000394794991_i1_1100.jpg"
+            context['name2'] = "쏜리서치 말레이트 마그네슘"
+            context['descrip2'] = "1일 1회 1정, 자기 전"
     elif (gptanswer.explanation.find('철분') > -1 and res['4'] == "on"):
         context['image2'] = "https://img.danawa.com/prod_img/500000/168/303/img/6303168_1.jpg?_v=20200618112935"
         context['name2'] = "네추럴라이즈 액티브 철분"
