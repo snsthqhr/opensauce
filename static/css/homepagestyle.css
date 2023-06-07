@@ -29,7 +29,7 @@ header{
     }
   
   .hye{
-    background-image: url(image/바탕사진입니다.jpg);
+    background-image: url("../image/바탕사진입니다.jpg");
      font-size: 30px;
     background-repeat: no-repeat;
        background-position: center center;
