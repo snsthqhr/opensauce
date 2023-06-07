@@ -19,15 +19,14 @@ color:black;
         background-position: center center;
         background-attachment: fixed;
          background-size: 100% 100%;
-      
-        font-size: 30px;
+             font-size:30pt;
        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       
     }
   
   .hye{
-    background-image: url(../image/바탕사진입니다.jpg);
-   
+    background-image: url(image/바탕사진입니다.jpg);
+     font-size: 30px;
     background-repeat: no-repeat;
        background-position: center center;
         background-attachment: fixed;
@@ -69,7 +68,7 @@ margin: auto;
   
 
   .h1{ 
-       
+        
         font-size: 2em;
         color:white;
         font-weight:800;
@@ -138,7 +137,50 @@ color:white;
   
 
   .last{
-  padding:30px;
+  padding:15px;
     background:black;
-    color:white;
+    
   }
+  .last>li{
+    color:white;
+  font-size:18pt
+  
+}
+
+  .images{
+    width:600px;
+    height:200px;
+    margin:auto;
+  }
+  .images1{
+    width:600px;
+    height:-80px;
+    margin:auto;
+  }
+  .images2{
+
+  }
+  .new{
+  text-align:left;
+    width:1000px;
+    margin:auto;
+    font-size: 15pt;
+    
+  }
+ 
+  .new1{
+    text-align:left;
+      width:600px;
+      margin:auto;
+      font-size: 15pt;
+      
+    }
+    .new1>strong{
+      font-size:20pt;
+    }
+    .h2{
+      font-size: 1em;
+      color:white;
+      font-weight:800;
+      font-family: 잘난체;
+    }
