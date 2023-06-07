@@ -12,7 +12,7 @@ def page_introduction(request):
     """
     홈페이지-소개 출력
     """
-    return render(request, 'pynuts/homepage_introduciton.html')
+    return render(request, 'pynuts/homepage_introduction.html')
 def page_necessity(request):
     """
     홈페이지-필요성 출력
