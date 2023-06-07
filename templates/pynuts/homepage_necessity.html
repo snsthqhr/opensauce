@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-    
+    {% load static %}
 <head>
       <title>나의 웹사이트</title> 
       
-      <link rel="stylesheet" type="text/css"href="homepagestyle.css">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/homepagestyle.css' %}">
 </head>
 
 <body>
@@ -44,7 +44,7 @@
        <br/>
     </div>
     <div class="images1">
-        <img src="image/효과이미지2.jpg" alt="">
+        <img src="../static/image/효과이미지2.jpg" alt="">
     </div>  
    
     
@@ -66,7 +66,7 @@
 <br/><br/>
 </div>
     <div class="images">
-        <img src="image/바탕.jpg" alt="">
+        <img src="../static/image/바탕.jpg" alt="">
     </div>
     
     <br/>

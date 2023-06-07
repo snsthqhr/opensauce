@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-
+  {% load static %}
 <head>
       <title>나의 웹사이트</title> 
-      <link rel="stylesheet" type="text/css" href="homepagestyle.css">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/homepagestyle.css' %}">
 </head>
 
 <body>
@@ -80,7 +80,7 @@
     추천받은 영양제를 구매할 땐?
   </li>
   <div class="icon_img">
-    <img src="image/그림2.svg" alt="">
+    <img src="../static/image/그림2.svg" alt="">
     
   </div>
   <ul class="icons">
