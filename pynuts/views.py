@@ -173,11 +173,11 @@ def diagnosis_create(request):
         if (eating_habits[4] == "on"):
             context['image1'] = "https://contents.lotteon.com/itemimage/_v185646/LO/19/80/14/54/62/_1/98/01/45/46/3/LO1980145462_1980145463_1.jpg"
             context['name1'] = "나우푸 철분 18mg 베지 캡슐"
-            context['descrip1'] = "1일 1회 1정, 공복"
+            context['descrip1'] = "1일 1회 1정, 식후 공복"
         else:
             context['image1'] = "https://img.danawa.com/prod_img/500000/168/303/img/6303168_1.jpg?_v=20200618112935"
             context['name1'] = "네추럴라이즈 액티브 철분"
-            context['descrip1'] = "1일 1회 1정, 공복"
+            context['descrip1'] = "1일 1회 1정, 식후 공복"
     elif (gptanswer.explanation.find('오메가') > -1 and res['5'] == "on"):
         res['5'] = "off"
         context['image1'] = "https://openimage.interpark.com/goods_image_big/0/7/5/9/11143170759_l.jpg"
@@ -220,10 +220,11 @@ def diagnosis_create(request):
             context['name2'] = "GNC 마그네슘"
             context['descrip2'] = "1일 1회 1정, 자기 전"
     elif (gptanswer.explanation.find('철분') > -1 and res['4'] == "on"):
-        context['image2'] = "https://img.danawa.com/prod_img/500000/168/303/img/6303168_1.jpg?_v=20200618112935"
-        context['name2'] = "네추럴라이즈 액티브 철분"
-        context['descrip2'] = "1일 1회 1정, 공복"
         res['4'] = "off"
+        if (eating_habits[4] == "on"):
+            context['image2'] = "https://contents.lotteon.com/itemimage/_v185646/LO/19/80/14/54/62/_1/98/01/45/46/3/LO1980145462_1980145463_1.jpg"
+            context['name2'] = "나우푸 철분 18mg 베지 캡슐"
+            context['descrip2'] = "1일 1회 1정, 식후 공복"
     elif (gptanswer.explanation.find('오메가') > -1 and res['5'] == "on"):
         context['image2'] = "https://openimage.interpark.com/goods_image_big/0/7/5/9/11143170759_l.jpg"
         context['name2'] = "트리플스트렝스_오메가3_피쉬오일"
