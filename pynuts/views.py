@@ -133,6 +133,7 @@ def diagnosis_create(request):
     if (answer != "on"):
         eating_habits[4] = "on"
 
+    """생선질문. 예->오메가3/많은거"""
     answer = request.GET.get('eathabit5')
     if (answer != "on"):
         eating_habits[5] = "on"
@@ -190,9 +191,14 @@ def diagnosis_create(request):
             context['descrip1'] = "1일 1회 1정, 식후 공복"
     elif (gptanswer.explanation.find('오메가') > -1 and res['5'] == "on"):
         res['5'] = "off"
-        context['image1'] = "https://openimage.interpark.com/goods_image_big/0/7/5/9/11143170759_l.jpg"
-        context['name1'] = "트리플스트렝스_오메가3_피쉬오일"
-        context['descrip1'] = "1일 1회 1정, 저녁식사 직후"
+        if (eating_habits[5] == "on"):
+            context['image1'] = "https://www.ckdhc.com/upload/images/2021/07/07/fa9120b0174cf5adc187e09244b6609b7c640b8a09abf27163a662fd3c41a17f"
+            context['name1'] = "프로메가 알티지 오메가3듀얼"
+            context['descrip1'] = "1일 1회 1정, 저녁식사 직후"
+        else:
+            context['image1'] = "https://openimage.interpark.com/goods_image_big/0/7/5/9/11143170759_l.jpg"
+            context['name1'] = "트리플스트렝스 오메가3 피쉬오일"
+            context['descrip1'] = "1일 1회 1정, 저녁식사 직후"
     elif (gptanswer.explanation.find('칼슘') > -1 and res['6'] == "on"):
         res['6'] = "off"
         context['image1'] = "https://openimage.interpark.com/goods_image_big/5/0/3/7/9439185037_l.jpg"
