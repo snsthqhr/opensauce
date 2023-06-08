@@ -1,66 +1,32 @@
 <!DOCTYPE html>
 <html>
 {% load static %}
+<title>여장신 진단결과</title>
 <head>
-
+    <link rel="stylesheet" type ="text/css" href="{% static 'css/homepagestyle.css' %}" >
     <link rel="stylesheet" type ="text/css" href="{% static 'css/background.css' %}" >
-    <link rel="stylesheet" type="text/css" href="{% static 'css/homepagestyle.css' %}">
 
+</head>
+
+
+
+<body>
     <div class="header">
-        <li>  <a href='/pynuts/homepage/' style="font-size: 30px;">여장신</a></li>
-        <ul class="nav">               
+        <li>  <a href='/pynuts/' style="font-size: 30px;">여장신</a></li>
+        <ul class="nav">
               <li> <a href='/pynuts/homepage_introduction/' style="font-size: 30px;">소개</a></li>
               <li> <a href='/pynuts/homepage_necessity/' style="font-size: 30px;">영양제의 필요성</a></li>
               <li> <a href='/pynuts/homepage_problem/' style="font-size: 30px;">영양소 결핍 시 문제점</a></li>
-          </ul>           
+          </ul>
       </div>
-      <title>여장신 진단결과</title> 
-</head>
 
-<body>
-    
-    <div style="display: flex;">
-    
-   <style>
-      body{
-            text-align: center;
-            background-image: url('../image/medicine_background.jpg');
-          background-repeat: no-repeat;
-           background-position: center center;
-            background-attachment: fixed;
-            background-size: 100% 100%;
-            font-size: 30px;
-           font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
-        }
 
-       
-       
-        h1{ 
-            font-size: 2em;
-            font-weight:800;
-            font-family: 잘난체;
-        }
-
-           </style>
-    <div>
     <br/>
-   
-
-
-   
-    
-</div>   
-  
-    
-
-</div>
-
-
+<div class = diagnosis_result_background>
 <div id ="container">
 
     <h3> 첫번째 영양제 </h3>
-    <div class="imagecontainer">-
+    <div class="imagecontainer">
         <img src="{{ image1 }}"  style="width:100px; height:100px;" alt="">
 
     </div>
@@ -76,7 +42,7 @@
     <h3> 두번째 영양제 </h3>
    <div class="imagecontainer">
         <img src="{{ image2 }}" style="width:100px; height:100px;"alt="">
-        
+
     </div>
     <p>영양제 이름: {{ name2 }}</p>
     <p style="font: size 17px">
@@ -91,7 +57,7 @@
     <div id ="imagecontainer" >
 
             <img src="{{ image3 }}" style="width:100px; height:100px;" alt="">
-        
+
     </div>
     <p>영양제 이름: {{ name3 }} </p>
     <p style="font: size 17px">
@@ -107,20 +73,19 @@
      추천받은 영양제를 구매할 땐?
    </li>
    <div class="icon_img">
-     <img src="../static/image/그림2.svg" alt="">
-     
+     <img src="/static/image/그림2.svg" alt="">
    </div>
    <ul class="icons">
- 
- <div class="more"> 
+
+ <div class="more">
    <a href="https://www.coupang.com/np/search?rocketAll=false&searchId=199aec6b8f9b4f00afc5c09013efe977&q=%EC%98%81%EC%96%91%EC%A0%9C&brand=&offerCondition=&filter=&availableDeliveryFilter=&filterType=&isPriceRange=false&priceRange=&minPrice=&maxPrice=&page=1&trcid=&traid=&filterSetByUser=true&channel=user&backgroundColor=&searchProductCount=1055871&component=305698&rating=0&sorter=scoreDesc&listSize=36" style="font-size: 30px;"><strong>쿠팡</strong> </a></li>
  </div>
- 
- 
+
+
  <div class="more">
    <a href="https://kr.iherb.com/?gclid=CjwKCAjwyeujBhA5EiwA5WD7_YEkxdqwFVKMWQEXCeBblU_3DHH38NcXEru2bfzeX2mDcv1k8L1YFxoCiNgQAvD_BwE&gclsrc=aw.ds" style="font-size: 30px;">iHerb</a></li>
  </div>
- 
+
      </ul>
  </div>
 
@@ -129,9 +94,9 @@
 <br>
 
 <br>
-   
-    <button type="button" style="font-size: 30px" class="return_home_page_button" onclick="location.href='/pynuts/'">홈으로 돌아가기</button >
 
+    <button type="button" style="font-size: 30px" class="return_home_page_button" onclick="location.href='/pynuts/'">홈으로 돌아가기</button >
+    </div>
 </body>
 
 

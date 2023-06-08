@@ -235,7 +235,7 @@ def diagnosis_create(request):
             context['name2'] = "나우푸드 데일리 비츠 멀티 비타민"
             context['descrip2'] = "1일 1회 1정, 아침 식후"
     elif (gptanswer.explanation.find('마그네슘') > -1 and res['3'] == "on"):
-        red['3'] = "off"
+        res['3'] = "off"
         if (eating_habits[3] == "on"):
             context['image2'] = "https://sitem.ssgcdn.com/91/49/79/item/1000394794991_i1_1100.jpg"
             context['name2'] = "쏜리서치 말레이트 마그네슘"
