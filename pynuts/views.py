@@ -15,7 +15,7 @@ def page_introduction(request):
     return render(request, 'pynuts/homepage_introduction.html')
 def page_necessity(request):
     """
-    홈페이지-필요성 출력
+    홈페이지-필요성 출력!
     """
     return render(request, 'pynuts/homepage_necessity.html')
 def page_problem(request):
