@@ -205,9 +205,14 @@ def diagnosis_create(request):
             context['descrip1'] = "1일 1회 1정, 저녁식사 직후"
     elif (gptanswer.explanation.find('칼슘') > -1 and res['6'] == "on"):
         res['6'] = "off"
-        context['image1'] = "https://openimage.interpark.com/goods_image_big/5/0/3/7/9439185037_l.jpg"
-        context['name1'] = "솔가 칼슘600"
-        context['descrip1'] = "1일 1회 1정, 저녁식사 직후"
+        if (eating_habits[6] == "on"):
+            context['image1'] = "https://thumbnail6.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/0183/4f7a9a844a0f5d152c98c2b21662134b904a048fe0dd033ebfd651fcd7f6.jpg"
+            context['name1'] = "레인보우라이트 칼슘 타블렛"
+            context['descrip1'] = "1일 1회 1정, 저녁식사 직후"
+        else:
+            context['image1'] = "https://openimage.interpark.com/goods_image_big/5/0/3/7/9439185037_l.jpg"
+            context['name1'] = "솔가 칼슘600"
+            context['descrip1'] = "1일 1회 1정, 저녁식사 직후"
 
     if (gptanswer.explanation.find('바이오틱') > -1 and res['1'] == "on"):
         res['1'] = "off"
