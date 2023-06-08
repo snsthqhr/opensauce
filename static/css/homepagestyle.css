@@ -10,11 +10,7 @@ color:black;
 /* black */
 
 }
-header{
-   
-}
 
-   
    
    body{
         text-align: center;
@@ -136,6 +132,7 @@ width:150px;
 height:50px;
 background:skyblue;
 margin:auto;
+border-radius: 5px;
 color:white;
   }
   
