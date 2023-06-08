@@ -328,8 +328,12 @@ def diagnosis_create(request):
     elif (gptanswer.explanation.find('칼슘') > -1 and res['6'] == "on"):
         res['6'] = "off"
         if (eating_habits[6] == "on"):
-            context['image2'] = "https://thumbnail6.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/0183/4f7a9a844a0f5d152c98c2b21662134b904a048fe0dd033ebfd651fcd7f6.jpg"
-            context['name2'] = "레인보우라이트 칼슘 타블렛"
-            context['descrip2'] = "1일 1회 1정, 저녁식사 직후"
+            context['image3'] = "https://thumbnail6.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/0183/4f7a9a844a0f5d152c98c2b21662134b904a048fe0dd033ebfd651fcd7f6.jpg"
+            context['name3'] = "레인보우라이트 칼슘 타블렛"
+            context['descrip3'] = "1일 1회 1정, 저녁식사 직후"
+        else:
+            context['image3'] = "https://openimage.interpark.com/goods_image_big/5/0/3/7/9439185037_l.jpg"
+            context['name3'] = "솔가 칼슘600"
+            context['descrip3'] = "1일 1회 1정, 저녁식사 직후"
 
     return render(request, 'pynuts/diagnosis_result.html', context)
