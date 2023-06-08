@@ -43,7 +43,7 @@ def diagnosis_create(request):
     """
     diagnosis = ""
     gptquestion = ""
-    eating_habits = [0, "off", "off", "off"]
+    eating_habits = [0, "off", "off", "off", "off", "off", "off"]
 
     answer = request.GET.get('digestion1')
     if (answer != "on"):
