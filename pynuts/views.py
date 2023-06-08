@@ -276,6 +276,10 @@ def diagnosis_create(request):
             context['image3'] = "https://contents.lotteon.com/itemimage/_v185646/LO/19/80/14/54/62/_1/98/01/45/46/3/LO1980145462_1980145463_1.jpg"
             context['name3'] = "나우푸드 철분 18mg 베지 캡슐"
             context['descrip3'] = "1일 1회 1정, 식후 공복"
+        else:
+            context['image3'] = "https://img.danawa.com/prod_img/500000/168/303/img/6303168_1.jpg?_v=20200618112935"
+            context['name3'] = "네추럴라이즈 액티브 철분"
+            context['descrip3'] = "1일 1회 1정, 식후 공복"
     elif (gptanswer.explanation.find('오메가') > -1 and res['5'] == "on"):
         context['image3'] = "https://openimage.interpark.com/goods_image_big/0/7/5/9/11143170759_l.jpg"
         context['name3'] = "트리플스트렝스_오메가3_피쉬오일"
