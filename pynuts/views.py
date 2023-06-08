@@ -12,7 +12,7 @@ def page_introduction(request):
     """
     홈페이지-소개 출력
     """
-    return render(request, 'pynuts/homepage_introduciton.html')
+    return render(request, 'pynuts/homepage_introduction.html')
 def page_necessity(request):
     """
     홈페이지-필요성 출력
@@ -42,8 +42,8 @@ def diagnosis_create(request):
     context = {'gptanswer': gptanswer}
     """
     diagnosis = ""
-    gptquestion1 = ""
-    gptquestion2 = ""
+    gptquestion = ""
+    eating_habits = [0, "off", "off", "off"]
 
     answer = request.GET.get('digestion1')
     if (answer != "on"):
@@ -113,12 +113,25 @@ def diagnosis_create(request):
     if (answer != "on"):
         diagnosis += answer
 
-    gptquestion1 = diagnosis + "한국 쿠팡에서 구매가능한 영양제 제품 이름 다섯개 이내로 알려줘. 설명 없이 제품만 추천해줘."
-    gptq1 = Diagnosis(content=gptquestion1)
-    gptquestion2 = diagnosis + "나에게 가장 필요한 영양소 3개를 진단해줘. 설명없이 영양소만 말해줘."
-    gptq2 = Question(content=gptquestion2)
+    """과일섭취질문. 예->비타민/많은거, 아니오->적은거"""
+    answer = request.GET.get('eathabit1')
+    if (answer != "on"):
+        eating_habits[1] = "on"
 
-    gptanswer = GPTResponse(content=chatgpt.chat_gpt(gptq1.content), explanation=chatgpt.chat_gpt(gptq2.content))
+    """규칙적인식사질문. 예->유산균/많은거"""
+    answer = request.GET.get('eathabit2')
+    if (answer != "on"):
+        eating_habits[2] = "on"
+
+    """편식질문. 예->마그네슘/많은거"""
+    answer = request.GET.get('eathabit3')
+    if (answer != "on"):
+        eating_habits[3] = "on"
+
+    gptquestion = diagnosis + "나에게 가장 필요한 영양소 3개를 진단해줘. 설명없이 영양소만 말해줘. 만약 필요한 영양소 중에 비타민이 있으면 비타민은 한 종류만 말해줘."
+    gptq = Question(content=gptquestion)
+
+    gptanswer = GPTResponse(content='', explanation=chatgpt.chat_gpt(gptq.content))
     gptanswer.save()
 
     context = {'gptanswer': gptanswer}
@@ -126,20 +139,35 @@ def diagnosis_create(request):
     res = {'1': "on", '2': "on", '3': "on", '4': "on", '5': "on", '6': "on"}
 
     if (gptanswer.explanation.find('바이오틱') > -1 and res['1'] == "on"):
-        context['image1'] = "https://img.danawa.com/prod_img/500000/359/849/img/5849359_1.jpg?_v=20200714153550"
-        context['name1'] = "서울약사신협 프로바이오 생유산균"
-        context['descrip1'] = "1일 1회 1포, 아침 공복"
         res['1'] = "off"
+        if (eating_habits[1] == "on"):
+            context['image1'] = "https://img.danawa.com/prod_img/500000/359/849/img/5849359_1.jpg?_v=20200714153550"
+            context['name1'] = "서울약사신협 프로바이오 생유산균"
+            context['descrip1'] = "1일 1회 1포, 아침 공복"
+        else:
+            context['image1'] = "https://openimage.interpark.com/goods_image_big/9/1/4/3/8937649143_l.jpg"
+            context['name1'] = "헬시오리진스 내추럴 프로바이오틱 유산균"
+            context['descrip1'] = "1일 1회 1정, 아침 공복"
     elif (gptanswer.explanation.find('비타') > -1 and res['2'] == "on"):
-        context['image1'] = "https://contents.lotteon.com/itemimage/_v165116/LO/19/77/79/36/03/_1/97/77/93/60/4/LO1977793603_1977793604_1.jpg/dims/optimize/dims/resizemc/400x400"
-        context['name1'] = "쏜리서치_종합비타민_투퍼데이"
-        context['descrip1'] = "1일 1회 2정, 식후"
         res['2'] = "off"
+        if (eating_habits[2] == "on"):
+            context['image1'] = "https://openimage.interpark.com/goods_image_big/0/7/7/1/9330140771_l.jpg"
+            context['name1'] = "쏜리서치 종합비타민 투퍼데이"
+            context['descrip1'] = "1일 1회 2정, 아침 공복"
+        else:
+            context['image1'] = "https://img2.tmon.kr/cdn4/deals/2022/12/19/16168134534/front_9d837_sgk4i.jpg"
+            context['name1'] = "나우푸드 데일리 비츠 멀티 비타민"
+            context['descrip1'] = "1일 1회 1정, 아침 공복"
     elif (gptanswer.explanation.find('마그네슘') > -1 and res['3'] == "on"):
-        context['image1'] = "https://img.danawa.com/prod_img/500000/583/126/img/3126583_1.jpg?_v=20221207111917"
-        context['name1'] = "GNC_마그네슘"
-        context['descrip1'] = "1일 1회 1정, 자기 전"
         res['3'] = "off"
+        if (eating_habits[3] == "on"):
+            context['image1'] = "https://sitem.ssgcdn.com/91/49/79/item/1000394794991_i1_1100.jpg"
+            context['name1'] = "쏜리서치 말레이트 마그네슘"
+            context['descrip1'] = "1일 1회 1정, 자기 전"
+        else:
+            context['image1'] = "https://img.danawa.com/prod_img/500000/583/126/img/3126583_1.jpg?_v=20221207111917"
+            context['name1'] = "GNC 마그네슘"
+            context['descrip1'] = "1일 1회 1정, 자기 전"
     elif (gptanswer.explanation.find('철분') > -1 and res['4'] == "on"):
         context['image1'] = "https://img.danawa.com/prod_img/500000/168/303/img/6303168_1.jpg?_v=20200618112935"
         context['name1'] = "네추럴라이즈 액티브 철분"
@@ -157,20 +185,35 @@ def diagnosis_create(request):
         res['6'] = "off"
 
     if (gptanswer.explanation.find('바이오틱') > -1 and res['1'] == "on"):
-        context['image2'] = "https://img.danawa.com/prod_img/500000/359/849/img/5849359_1.jpg?_v=20200714153550"
-        context['name2'] = "서울약사신협 프로바이오 생유산균"
-        context['descrip2'] = "1일 1회 1포, 아침 공복"
         res['1'] = "off"
+        if (eating_habits[2] == "on"):
+            context['image2'] = "https://img.danawa.com/prod_img/500000/359/849/img/5849359_1.jpg?_v=20200714153550"
+            context['name2'] = "서울약사신협 프로바이오 생유산균"
+            context['descrip2'] = "1일 1회 1포, 아침 공복"
+        else:
+            context['image2'] = "https://openimage.interpark.com/goods_image_big/9/1/4/3/8937649143_l.jpg"
+            context['name2'] = "헬시오리진스 내추럴 프로바이오틱 유산균"
+            context['descrip2'] = "1일 1회 1정, 아침 공복"
     elif (gptanswer.explanation.find('비타') > -1 and res['2'] == "on"):
-        context['image2'] = "https://contents.lotteon.com/itemimage/_v165116/LO/19/77/79/36/03/_1/97/77/93/60/4/LO1977793603_1977793604_1.jpg/dims/optimize/dims/resizemc/400x400"
-        context['name2'] = "쏜리서치_종합비타민_투퍼데이"
-        context['descrip2'] = "1일 1회 2정, 식후"
         res['2'] = "off"
+        if (eating_habits[2] == "on"):
+            context['image2'] = "https://openimage.interpark.com/goods_image_big/0/7/7/1/9330140771_l.jpg"
+            context['name2'] = "쏜리서치 종합비타민 투퍼데이"
+            context['descrip2'] = "1일 1회 2정, 아침 공복"
+        else:
+            context['image2'] = "https://img2.tmon.kr/cdn4/deals/2022/12/19/16168134534/front_9d837_sgk4i.jpg"
+            context['name2'] = "나우푸드 데일리 비츠 멀티 비타민"
+            context['descrip2'] = "1일 1회 1정, 아침 공복"
     elif (gptanswer.explanation.find('마그네슘') > -1 and res['3'] == "on"):
-        context['image2'] = "https://img.danawa.com/prod_img/500000/583/126/img/3126583_1.jpg?_v=20221207111917"
-        context['name2'] = "GNC_마그네슘"
-        context['descrip2'] = "1일 1회 1정, 자기 전"
-        res['3'] = "off"
+        red['3'] = "off"
+        if (eating_habits[3] == "on"):
+            context['image2'] = "https://sitem.ssgcdn.com/91/49/79/item/1000394794991_i1_1100.jpg"
+            context['name2'] = "쏜리서치 말레이트 마그네슘"
+            context['descrip2'] = "1일 1회 1정, 자기 전"
+        else:
+            context['image2'] = "https://img.danawa.com/prod_img/500000/583/126/img/3126583_1.jpg?_v=20221207111917"
+            context['name2'] = "GNC 마그네슘"
+            context['descrip2'] = "1일 1회 1정, 자기 전"
     elif (gptanswer.explanation.find('철분') > -1 and res['4'] == "on"):
         context['image2'] = "https://img.danawa.com/prod_img/500000/168/303/img/6303168_1.jpg?_v=20200618112935"
         context['name2'] = "네추럴라이즈 액티브 철분"
@@ -188,20 +231,35 @@ def diagnosis_create(request):
         res['6'] = "off"
 
     if (gptanswer.explanation.find('바이오틱') > -1 and res['1'] == "on"):
-        context['image3'] = "https://img.danawa.com/prod_img/500000/359/849/img/5849359_1.jpg?_v=20200714153550"
-        context['name3'] = "서울약사신협 프로바이오 생유산균"
-        context['descrip3'] = "1일 1회 1포, 아침 공복"
         res['1'] = "off"
+        if (eating_habits[2] == "on"):
+            context['image3'] = "https://img.danawa.com/prod_img/500000/359/849/img/5849359_1.jpg?_v=20200714153550"
+            context['name3'] = "서울약사신협 프로바이오 생유산균"
+            context['descrip3'] = "1일 1회 1포, 아침 공복"
+        else:
+            context['image3'] = "https://openimage.interpark.com/goods_image_big/9/1/4/3/8937649143_l.jpg"
+            context['name3'] = "헬시오리진스 내추럴 프로바이오틱 유산균"
+            context['descrip3'] = "1일 1회 1정, 아침 공복"
     elif (gptanswer.explanation.find('비타') > -1 and res['2'] == "on"):
-        context['image3'] = "https://contents.lotteon.com/itemimage/_v165116/LO/19/77/79/36/03/_1/97/77/93/60/4/LO1977793603_1977793604_1.jpg/dims/optimize/dims/resizemc/400x400"
-        context['name3'] = "쏜리서치_종합비타민_투퍼데이"
-        context['descrip3'] = "1일 1회 2정, 식후"
         res['2'] = "off"
+        if (eating_habits[2] == "on"):
+            context['image3'] = "https://openimage.interpark.com/goods_image_big/0/7/7/1/9330140771_l.jpg"
+            context['name3'] = "쏜리서치 종합비타민 투퍼데이"
+            context['descrip3'] = "1일 1회 2정, 아침 공복"
+        else:
+            context['image3'] = "https://img2.tmon.kr/cdn4/deals/2022/12/19/16168134534/front_9d837_sgk4i.jpg"
+            context['name3'] = "나우푸드 데일리 비츠 멀티 비타민"
+            context['descrip3'] = "1일 1회 1정, 아침 공복"
     elif (gptanswer.explanation.find('마그네슘') > -1 and res['3'] == "on"):
-        context['image3'] = "https://img.danawa.com/prod_img/500000/583/126/img/3126583_1.jpg?_v=20221207111917"
-        context['name3'] = "GNC_마그네슘"
-        context['descrip3'] = "1일 1회 1정, 자기 전"
         res['3'] = "off"
+        if (eating_habits[3] == "on"):
+            context['image3'] = "https://sitem.ssgcdn.com/91/49/79/item/1000394794991_i1_1100.jpg"
+            context['name3'] = "쏜리서치 말레이트 마그네슘"
+            context['descrip3'] = "1일 1회 1정, 자기 전"
+        else:
+            context['image2'] = "https://img.danawa.com/prod_img/500000/583/126/img/3126583_1.jpg?_v=20221207111917"
+            context['name2'] = "GNC 마그네슘"
+            context['descrip2'] = "1일 1회 1정, 자기 전"   
     elif (gptanswer.explanation.find('철분') > -1 and res['4'] == "on"):
         context['image3'] = "https://img.danawa.com/prod_img/500000/168/303/img/6303168_1.jpg?_v=20200618112935"
         context['name3'] = "네추럴라이즈 액티브 철분"
