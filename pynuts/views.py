@@ -251,6 +251,10 @@ def diagnosis_create(request):
             context['image2'] = "https://www.ckdhc.com/upload/images/2021/07/07/fa9120b0174cf5adc187e09244b6609b7c640b8a09abf27163a662fd3c41a17f"
             context['name2'] = "프로메가 알티지 오메가3듀얼"
             context['descrip2'] = "1일 1회 1정, 저녁식사 직후"
+        else:
+            context['image1'] = "https://openimage.interpark.com/goods_image_big/0/7/5/9/11143170759_l.jpg"
+            context['name1'] = "트리플스트렝스 오메가3 피쉬오일"
+            context['descrip1'] = "1일 1회 1정, 저녁식사 직후"
     elif (gptanswer.explanation.find('칼슘') > -1 and res['6'] == "on"):
         context['image2'] = "https://openimage.interpark.com/goods_image_big/5/0/3/7/9439185037_l.jpg"
         context['name2'] = "솔가 칼슘600"
