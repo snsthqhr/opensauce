@@ -169,20 +169,22 @@ def diagnosis_create(request):
             context['name1'] = "GNC 마그네슘"
             context['descrip1'] = "1일 1회 1정, 자기 전"
     elif (gptanswer.explanation.find('철분') > -1 and res['4'] == "on"):
+        res['4'] = "off"
+        if (eating_habits[4] == "on"):
+            res['4'] = "off"
         context['image1'] = "https://img.danawa.com/prod_img/500000/168/303/img/6303168_1.jpg?_v=20200618112935"
         context['name1'] = "네추럴라이즈 액티브 철분"
         context['descrip1'] = "1일 1회 1정, 공복"
-        res['4'] = "off"
     elif (gptanswer.explanation.find('오메가') > -1 and res['5'] == "on"):
+        res['5'] = "off"
         context['image1'] = "https://openimage.interpark.com/goods_image_big/0/7/5/9/11143170759_l.jpg"
         context['name1'] = "트리플스트렝스_오메가3_피쉬오일"
         context['descrip1'] = "1일 1회 1정, 저녁식사 직후"
-        res['5'] = "off"
     elif (gptanswer.explanation.find('칼슘') > -1 and res['6'] == "on"):
+        res['6'] = "off"
         context['image1'] = "https://openimage.interpark.com/goods_image_big/5/0/3/7/9439185037_l.jpg"
         context['name1'] = "솔가 칼슘600"
         context['descrip1'] = "1일 1회 1정, 저녁식사 직후"
-        res['6'] = "off"
 
     if (gptanswer.explanation.find('바이오틱') > -1 and res['1'] == "on"):
         res['1'] = "off"
@@ -259,7 +261,7 @@ def diagnosis_create(request):
         else:
             context['image2'] = "https://img.danawa.com/prod_img/500000/583/126/img/3126583_1.jpg?_v=20221207111917"
             context['name2'] = "GNC 마그네슘"
-            context['descrip2'] = "1일 1회 1정, 자기 전"   
+            context['descrip2'] = "1일 1회 1정, 자기 전"
     elif (gptanswer.explanation.find('철분') > -1 and res['4'] == "on"):
         context['image3'] = "https://img.danawa.com/prod_img/500000/168/303/img/6303168_1.jpg?_v=20200618112935"
         context['name3'] = "네추럴라이즈 액티브 철분"
