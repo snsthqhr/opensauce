@@ -65,3 +65,64 @@ b{
   height: 10vh;
   width: 10vw;
 }
+
+.diagnosis_result_background{
+  
+  text-align: center;
+            background-image: url('../image/medicine_background.jpg');
+          background-repeat: no-repeat;
+           background-position: center center;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            font-size: 30px;
+           font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  
+}
+.header{
+  display:flex;  /*가로로 배치*/    
+  width:1280px;
+  margin:auto;
+  line-height:86px;
+  height:86px;
+  font-weight:800;
+  
+}
+
+.nav{
+  display:flex;
+  justify-content: flex-end;
+  line-height: 86px;
+  width:calc(1280px - 300px);
+  background-color: white;
+ 
+
+}
+
+.nav>li{
+  margin-left:84px;
+
+}
+.icons{
+  display:flex;
+   width:600px;
+   height:200px;
+   margin: auto;
+
+}
+
+.icons>li{
+flex:1;
+background:white;
+text-align:center;
+margin-top:49px;
+height: 200x;
+
+}
+.more{
+  width:150px;
+  height:50px;
+  background:skyblue;
+  margin:auto;
+  border-radius: 5px;
+  color:white;
+    }
